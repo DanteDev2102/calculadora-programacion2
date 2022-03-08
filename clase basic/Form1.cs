@@ -40,14 +40,14 @@ namespace clase_basic
             }
 
             // segunda forma (switch resmuido) y la mas optima en este caso
-            //metodo switch
+            //var operacion = metodo switch
             //{
-            //"sumar" => resultado.Text = (num1 + num2).ToString(),
-            //"restar" => resultado.Text = (num1 - num2).ToString(),
-            //"multiplicar" => resultado.Text = (num1 * num2).ToString(),
-            //"dividir" => resultado.Text = (num1 / num2).ToString(),
-            //=> resultado.Text = "no existe la operacion",
+            //  "sumar" => (num1 + num2).ToString(),
+            //  "restar" => (num1 - num2).ToString(),
+            //  "multiplicar" => (num1 * num2).ToString(),
+            //  "dividir" => (num1 / num2).ToString()            
             //};
+            // resultado.Text = operacion;
 
             // tercera forma (switch tradicional)
             //switch (metodo)
@@ -65,6 +65,8 @@ namespace clase_basic
             //        resultado.Text = (num1 / num2).ToString();
             //        break;
             //}
+            
+            // para probar cualquiera de las soluciones solo se debe agregar el codigo al bloque try
         }
 
         private void button_sumar_Click(object sender, EventArgs e)
