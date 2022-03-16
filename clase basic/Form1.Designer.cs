@@ -32,21 +32,23 @@
             this.label_numero2 = new System.Windows.Forms.Label();
             this.textbox_numero1 = new System.Windows.Forms.TextBox();
             this.textbox_numero2 = new System.Windows.Forms.TextBox();
-            this.button_restar = new System.Windows.Forms.Button();
             this.button_reset = new System.Windows.Forms.Button();
             this.resultado = new System.Windows.Forms.TextBox();
             this.result = new System.Windows.Forms.Label();
-            this.button_sumar = new System.Windows.Forms.Button();
-            this.button_multiplicar = new System.Windows.Forms.Button();
-            this.button_dividir = new System.Windows.Forms.Button();
             this.titulo = new System.Windows.Forms.Label();
             this.errorMessage = new System.Windows.Forms.Label();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.radioBtn_sumar = new System.Windows.Forms.RadioButton();
+            this.radioButton_restar = new System.Windows.Forms.RadioButton();
+            this.radioButton_multiplicar = new System.Windows.Forms.RadioButton();
+            this.radioButton_dividir = new System.Windows.Forms.RadioButton();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_numero1
             // 
             this.label_numero1.AutoSize = true;
-            this.label_numero1.Location = new System.Drawing.Point(270, 120);
+            this.label_numero1.Location = new System.Drawing.Point(17, 34);
             this.label_numero1.Name = "label_numero1";
             this.label_numero1.Size = new System.Drawing.Size(58, 15);
             this.label_numero1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // label_numero2
             // 
             this.label_numero2.AutoSize = true;
-            this.label_numero2.Location = new System.Drawing.Point(270, 182);
+            this.label_numero2.Location = new System.Drawing.Point(17, 103);
             this.label_numero2.Name = "label_numero2";
             this.label_numero2.Size = new System.Drawing.Size(58, 15);
             this.label_numero2.TabIndex = 1;
@@ -65,7 +67,7 @@
             // 
             // textbox_numero1
             // 
-            this.textbox_numero1.Location = new System.Drawing.Point(270, 145);
+            this.textbox_numero1.Location = new System.Drawing.Point(17, 62);
             this.textbox_numero1.Name = "textbox_numero1";
             this.textbox_numero1.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero1.TabIndex = 2;
@@ -73,27 +75,16 @@
             // 
             // textbox_numero2
             // 
-            this.textbox_numero2.Location = new System.Drawing.Point(270, 209);
+            this.textbox_numero2.Location = new System.Drawing.Point(17, 133);
             this.textbox_numero2.Name = "textbox_numero2";
             this.textbox_numero2.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero2.TabIndex = 3;
             this.textbox_numero2.TextChanged += new System.EventHandler(this.textbox_numero2_TextChanged);
             // 
-            // button_restar
-            // 
-            this.button_restar.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button_restar.Location = new System.Drawing.Point(383, 177);
-            this.button_restar.Name = "button_restar";
-            this.button_restar.Size = new System.Drawing.Size(76, 25);
-            this.button_restar.TabIndex = 4;
-            this.button_restar.Text = "restar";
-            this.button_restar.UseVisualStyleBackColor = false;
-            this.button_restar.Click += new System.EventHandler(this.button_restar_Click);
-            // 
             // button_reset
             // 
             this.button_reset.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button_reset.Location = new System.Drawing.Point(465, 145);
+            this.button_reset.Location = new System.Drawing.Point(383, 299);
             this.button_reset.Name = "button_reset";
             this.button_reset.Size = new System.Drawing.Size(76, 27);
             this.button_reset.TabIndex = 5;
@@ -103,7 +94,7 @@
             // 
             // resultado
             // 
-            this.resultado.Location = new System.Drawing.Point(332, 248);
+            this.resultado.Location = new System.Drawing.Point(79, 179);
             this.resultado.Name = "resultado";
             this.resultado.Size = new System.Drawing.Size(38, 23);
             this.resultado.TabIndex = 6;
@@ -112,46 +103,12 @@
             // result
             // 
             this.result.AutoSize = true;
-            this.result.Location = new System.Drawing.Point(270, 256);
+            this.result.Location = new System.Drawing.Point(17, 184);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(56, 15);
             this.result.TabIndex = 7;
             this.result.Text = "resultado";
             this.result.Click += new System.EventHandler(this.result_Click);
-            // 
-            // button_sumar
-            // 
-            this.button_sumar.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button_sumar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_sumar.Location = new System.Drawing.Point(383, 145);
-            this.button_sumar.Name = "button_sumar";
-            this.button_sumar.Size = new System.Drawing.Size(76, 25);
-            this.button_sumar.TabIndex = 8;
-            this.button_sumar.Text = "sumar";
-            this.button_sumar.UseVisualStyleBackColor = false;
-            this.button_sumar.Click += new System.EventHandler(this.button_sumar_Click);
-            // 
-            // button_multiplicar
-            // 
-            this.button_multiplicar.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button_multiplicar.Location = new System.Drawing.Point(383, 209);
-            this.button_multiplicar.Name = "button_multiplicar";
-            this.button_multiplicar.Size = new System.Drawing.Size(76, 25);
-            this.button_multiplicar.TabIndex = 9;
-            this.button_multiplicar.Text = "multiplicar";
-            this.button_multiplicar.UseVisualStyleBackColor = false;
-            this.button_multiplicar.Click += new System.EventHandler(this.button_multiplicar_Click_1);
-            // 
-            // button_dividir
-            // 
-            this.button_dividir.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button_dividir.Location = new System.Drawing.Point(465, 177);
-            this.button_dividir.Name = "button_dividir";
-            this.button_dividir.Size = new System.Drawing.Size(76, 25);
-            this.button_dividir.TabIndex = 10;
-            this.button_dividir.Text = "dividir";
-            this.button_dividir.UseVisualStyleBackColor = false;
-            this.button_dividir.Click += new System.EventHandler(this.button_dividir_Click_1);
             // 
             // titulo
             // 
@@ -172,29 +129,90 @@
             this.errorMessage.Size = new System.Drawing.Size(0, 15);
             this.errorMessage.TabIndex = 12;
             // 
+            // groupBox
+            // 
+            this.groupBox.Controls.Add(this.label_numero1);
+            this.groupBox.Controls.Add(this.textbox_numero1);
+            this.groupBox.Controls.Add(this.label_numero2);
+            this.groupBox.Controls.Add(this.textbox_numero2);
+            this.groupBox.Controls.Add(this.result);
+            this.groupBox.Controls.Add(this.resultado);
+            this.groupBox.Location = new System.Drawing.Point(177, 127);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(200, 224);
+            this.groupBox.TabIndex = 13;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "inputs";
+            this.groupBox.Enter += new System.EventHandler(this.groupBox_Enter);
+            // 
+            // radioBtn_sumar
+            // 
+            this.radioBtn_sumar.AutoSize = true;
+            this.radioBtn_sumar.Location = new System.Drawing.Point(383, 152);
+            this.radioBtn_sumar.Name = "radioBtn_sumar";
+            this.radioBtn_sumar.Size = new System.Drawing.Size(58, 19);
+            this.radioBtn_sumar.TabIndex = 14;
+            this.radioBtn_sumar.TabStop = true;
+            this.radioBtn_sumar.Text = "sumar";
+            this.radioBtn_sumar.UseVisualStyleBackColor = true;
+            this.radioBtn_sumar.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton_restar
+            // 
+            this.radioButton_restar.AutoSize = true;
+            this.radioButton_restar.Location = new System.Drawing.Point(468, 152);
+            this.radioButton_restar.Name = "radioButton_restar";
+            this.radioButton_restar.Size = new System.Drawing.Size(54, 19);
+            this.radioButton_restar.TabIndex = 15;
+            this.radioButton_restar.TabStop = true;
+            this.radioButton_restar.Text = "restar";
+            this.radioButton_restar.UseVisualStyleBackColor = true;
+            this.radioButton_restar.CheckedChanged += new System.EventHandler(this.radioButton_restar_CheckedChanged);
+            // 
+            // radioButton_multiplicar
+            // 
+            this.radioButton_multiplicar.AutoSize = true;
+            this.radioButton_multiplicar.Location = new System.Drawing.Point(383, 193);
+            this.radioButton_multiplicar.Name = "radioButton_multiplicar";
+            this.radioButton_multiplicar.Size = new System.Drawing.Size(82, 19);
+            this.radioButton_multiplicar.TabIndex = 16;
+            this.radioButton_multiplicar.TabStop = true;
+            this.radioButton_multiplicar.Text = "multiplicar";
+            this.radioButton_multiplicar.UseVisualStyleBackColor = true;
+            this.radioButton_multiplicar.CheckedChanged += new System.EventHandler(this.radioButton_multiplicar_CheckedChanged);
+            // 
+            // radioButton_dividir
+            // 
+            this.radioButton_dividir.AutoSize = true;
+            this.radioButton_dividir.Location = new System.Drawing.Point(471, 193);
+            this.radioButton_dividir.Name = "radioButton_dividir";
+            this.radioButton_dividir.Size = new System.Drawing.Size(58, 19);
+            this.radioButton_dividir.TabIndex = 17;
+            this.radioButton_dividir.TabStop = true;
+            this.radioButton_dividir.Text = "dividir";
+            this.radioButton_dividir.UseVisualStyleBackColor = true;
+            this.radioButton_dividir.CheckedChanged += new System.EventHandler(this.radioButton_dividir_CheckedChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButton_dividir);
+            this.Controls.Add(this.radioButton_multiplicar);
+            this.Controls.Add(this.radioButton_restar);
+            this.Controls.Add(this.radioBtn_sumar);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.errorMessage);
             this.Controls.Add(this.titulo);
-            this.Controls.Add(this.button_dividir);
-            this.Controls.Add(this.button_multiplicar);
-            this.Controls.Add(this.button_sumar);
-            this.Controls.Add(this.result);
-            this.Controls.Add(this.resultado);
             this.Controls.Add(this.button_reset);
-            this.Controls.Add(this.button_restar);
-            this.Controls.Add(this.textbox_numero2);
-            this.Controls.Add(this.textbox_numero1);
-            this.Controls.Add(this.label_numero2);
-            this.Controls.Add(this.label_numero1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,14 +224,15 @@
         private Label label_numero2;
         private TextBox textbox_numero1;
         private TextBox textbox_numero2;
-        private Button button_restar;
         private Button button_reset;
         private TextBox resultado;
         private Label result;
-        private Button button_sumar;
-        private Button button_multiplicar;
-        private Button button_dividir;
         private Label titulo;
         private Label errorMessage;
+        private GroupBox groupBox;
+        private RadioButton radioBtn_sumar;
+        private RadioButton radioButton_restar;
+        private RadioButton radioButton_multiplicar;
+        private RadioButton radioButton_dividir;
     }
 }

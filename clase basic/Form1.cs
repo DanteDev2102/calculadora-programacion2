@@ -9,92 +9,74 @@ namespace clase_basic
 
         public void calcular(string metodo)
         {
-            double num1, num2;
-
-            // primera forma (if else)
             try
             {
-                num1 = Convert.ToDouble(textbox_numero1.Text);
-                num2 = Convert.ToDouble(textbox_numero2.Text);
-                if (metodo == "sumar")
+                double num1 = Convert.ToDouble(textbox_numero1.Text);
+                double num2 = Convert.ToDouble(textbox_numero2.Text);
+                resultado.Text = num1.ToString();
+                string operacion = metodo switch
                 {
-                    resultado.Text = (num1 + num2).ToString();
-                }
-                else if (metodo == "restar")
+                    "sumar" => (num1 + num2).ToString(),
+                    "restar" => (num1 - num2).ToString(),
+                    "multiplicar" => (num1 * num2).ToString(),
+                    "dividir" => (num1 / num2).ToString(),
+                    _ => throw new NotImplementedException()
+                };
+
+                if (
+                    double.IsNaN(Convert.ToDouble(resultado.Text)) ||
+                    double.IsInfinity(Convert.ToDouble(resultado.Text))
+                   )
                 {
-                    resultado.Text = (num1 - num2).ToString();
+                    errorMessage.Text = "ERROR: no es posible realizar la operacion";
                 }
-                else if (metodo == "multiplicar")
+                else
                 {
-                    resultado.Text = (num1 * num2).ToString();
+                    errorMessage.Text = "";
+                    resultado.Text = operacion;
                 }
-                else if (metodo == "dividir")
-                {
-                    resultado.Text = (num1 / num2).ToString();
-                }
-                errorMessage.Text = "";
             }
             catch (Exception)
             {
                 errorMessage.Text = "ERROR: no es posible realizar la operacion";
             }
 
-            // segunda forma (switch resmuido) y la mas optima en este caso
-            //var operacion = metodo switch
-            //{
-            //  "sumar" => (num1 + num2).ToString(),
-            //  "restar" => (num1 - num2).ToString(),
-            //  "multiplicar" => (num1 * num2).ToString(),
-            //  "dividir" => (num1 / num2).ToString()            
-            //};
-            // resultado.Text = operacion;
-
-            // tercera forma (switch tradicional)
-            //switch (metodo)
-            //{
-            //    case "sumar":
-            //        resultado.Text = (num1 + num2).ToString();
-            //        break;
-            //    case "restar":
-            //        resultado.Text = (num1 - num2).ToString();
-            //        break;
-            //    case "multiplicar":
-            //        resultado.Text = (num1 * num2).ToString();
-            //        break;
-            //    case "dividir":
-            //        resultado.Text = (num1 / num2).ToString();
-            //        break;
-            //}
-            
-            // para probar cualquiera de las soluciones solo se debe agregar el codigo al bloque try
         }
 
-        private void button_sumar_Click(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            calcular("sumar");
+            if (radioBtn_sumar.Checked)
+            {
+                calcular("sumar");
+            }
         }
-        private void button_restar_Click(object sender, EventArgs e)
+        private void radioButton_restar_CheckedChanged(object sender, EventArgs e)
         {
-            calcular("restar");
+            if (radioButton_restar.Checked)
+            {
+                calcular("restar");
+            }
         }
-
+        private void radioButton_multiplicar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_multiplicar.Checked)
+            {
+                calcular("multiplicar");
+            }
+        }
+        private void radioButton_dividir_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radioButton_dividir.Checked)
+            {
+                calcular("dividir");
+            }
+        }
         private void button_reset_Click(object sender, EventArgs e)
         {
-            resultado.Text = "";
-            textbox_numero1.Text = "";
-            textbox_numero2.Text = "";
+            resultado.Clear();
+            textbox_numero1.Clear();
+            textbox_numero2.Clear();
         }
-
-        private void button_dividir_Click_1(object sender, EventArgs e)
-        {
-            calcular("dividir");
-        }
-
-        private void button_multiplicar_Click_1(object sender, EventArgs e)
-        {
-            calcular("multiplicar");
-        }
-
         private void label_numero1_Click(object sender, EventArgs e) { }
         private void label_numero2_Click(object sender, EventArgs e) { }
         private void result_Click(object sender, EventArgs e) { }
@@ -102,6 +84,7 @@ namespace clase_basic
         private void textbox_numero2_TextChanged(object sender, EventArgs e) { }
         private void resultado_TextChanged(object sender, EventArgs e) { }
         private void Form1_Load(object sender, EventArgs e) { }
-
+        private void groupBox_Enter(object sender, EventArgs e) { }
     }
 }
+
