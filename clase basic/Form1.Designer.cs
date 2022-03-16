@@ -38,10 +38,8 @@
             this.titulo = new System.Windows.Forms.Label();
             this.errorMessage = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.radioBtn_sumar = new System.Windows.Forms.RadioButton();
-            this.radioButton_restar = new System.Windows.Forms.RadioButton();
-            this.radioButton_multiplicar = new System.Windows.Forms.RadioButton();
-            this.radioButton_dividir = new System.Windows.Forms.RadioButton();
+            this.comboBox_operaciones = new System.Windows.Forms.ComboBox();
+            this.button_calcular = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,53 +138,31 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "inputs";
             // 
-            // radioBtn_sumar
+            // comboBox_operaciones
             // 
-            this.radioBtn_sumar.AutoSize = true;
-            this.radioBtn_sumar.Location = new System.Drawing.Point(383, 152);
-            this.radioBtn_sumar.Name = "radioBtn_sumar";
-            this.radioBtn_sumar.Size = new System.Drawing.Size(58, 19);
-            this.radioBtn_sumar.TabIndex = 14;
-            this.radioBtn_sumar.TabStop = true;
-            this.radioBtn_sumar.Text = "sumar";
-            this.radioBtn_sumar.UseVisualStyleBackColor = true;
-            this.radioBtn_sumar.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.comboBox_operaciones.FormattingEnabled = true;
+            this.comboBox_operaciones.Items.AddRange(new object[] {
+            "sumar",
+            "restar",
+            "multiplicar",
+            "dividir"});
+            this.comboBox_operaciones.Location = new System.Drawing.Point(392, 177);
+            this.comboBox_operaciones.Name = "comboBox_operaciones";
+            this.comboBox_operaciones.Size = new System.Drawing.Size(137, 23);
+            this.comboBox_operaciones.TabIndex = 14;
+            this.comboBox_operaciones.Text = "operaciones";
+            this.comboBox_operaciones.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // radioButton_restar
+            // button_calcular
             // 
-            this.radioButton_restar.AutoSize = true;
-            this.radioButton_restar.Location = new System.Drawing.Point(468, 152);
-            this.radioButton_restar.Name = "radioButton_restar";
-            this.radioButton_restar.Size = new System.Drawing.Size(54, 19);
-            this.radioButton_restar.TabIndex = 15;
-            this.radioButton_restar.TabStop = true;
-            this.radioButton_restar.Text = "restar";
-            this.radioButton_restar.UseVisualStyleBackColor = true;
-            this.radioButton_restar.CheckedChanged += new System.EventHandler(this.radioButton_restar_CheckedChanged);
-            // 
-            // radioButton_multiplicar
-            // 
-            this.radioButton_multiplicar.AutoSize = true;
-            this.radioButton_multiplicar.Location = new System.Drawing.Point(383, 193);
-            this.radioButton_multiplicar.Name = "radioButton_multiplicar";
-            this.radioButton_multiplicar.Size = new System.Drawing.Size(82, 19);
-            this.radioButton_multiplicar.TabIndex = 16;
-            this.radioButton_multiplicar.TabStop = true;
-            this.radioButton_multiplicar.Text = "multiplicar";
-            this.radioButton_multiplicar.UseVisualStyleBackColor = true;
-            this.radioButton_multiplicar.CheckedChanged += new System.EventHandler(this.radioButton_multiplicar_CheckedChanged);
-            // 
-            // radioButton_dividir
-            // 
-            this.radioButton_dividir.AutoSize = true;
-            this.radioButton_dividir.Location = new System.Drawing.Point(471, 193);
-            this.radioButton_dividir.Name = "radioButton_dividir";
-            this.radioButton_dividir.Size = new System.Drawing.Size(58, 19);
-            this.radioButton_dividir.TabIndex = 17;
-            this.radioButton_dividir.TabStop = true;
-            this.radioButton_dividir.Text = "dividir";
-            this.radioButton_dividir.UseVisualStyleBackColor = true;
-            this.radioButton_dividir.CheckedChanged += new System.EventHandler(this.radioButton_dividir_CheckedChanged_1);
+            this.button_calcular.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.button_calcular.Location = new System.Drawing.Point(473, 298);
+            this.button_calcular.Name = "button_calcular";
+            this.button_calcular.Size = new System.Drawing.Size(75, 28);
+            this.button_calcular.TabIndex = 15;
+            this.button_calcular.Text = "calcular";
+            this.button_calcular.UseVisualStyleBackColor = false;
+            this.button_calcular.Click += new System.EventHandler(this.button_calcular_Click);
             // 
             // Form1
             // 
@@ -194,10 +170,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.radioButton_dividir);
-            this.Controls.Add(this.radioButton_multiplicar);
-            this.Controls.Add(this.radioButton_restar);
-            this.Controls.Add(this.radioBtn_sumar);
+            this.Controls.Add(this.button_calcular);
+            this.Controls.Add(this.comboBox_operaciones);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.errorMessage);
             this.Controls.Add(this.titulo);
@@ -225,9 +199,7 @@
         private Label titulo;
         private Label errorMessage;
         private GroupBox groupBox;
-        private RadioButton radioBtn_sumar;
-        private RadioButton radioButton_restar;
-        private RadioButton radioButton_multiplicar;
-        private RadioButton radioButton_dividir;
+        private ComboBox comboBox_operaciones;
+        private Button button_calcular;
     }
 }

@@ -2,14 +2,17 @@ namespace clase_basic
 {
     public partial class Form1 : Form
     {
+        private string opcion = "";
         public Form1()
         {
             InitializeComponent();
         }
+
         public int soloNumeros(int tecla)
         {
             return tecla switch
             {
+                08 or
                 46 or
                 48 or
                 49 or
@@ -20,7 +23,8 @@ namespace clase_basic
                 54 or
                 55 or
                 56 or
-                57 => tecla,
+                57 or
+                127 => tecla,
                 _ => 0,
             };
         }
@@ -36,7 +40,7 @@ namespace clase_basic
                     "restar" => (num1 - num2),
                     "multiplicar" => (num1 * num2),
                     "dividir" => (num1 / num2),
-                    _ => throw new NotImplementedException()
+                    _ => throw new Exception()
                 };
                 if (double.IsInfinity(operacion) || double.IsNaN(operacion))
                 {
@@ -52,34 +56,6 @@ namespace clase_basic
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioBtn_sumar.Checked)
-            {
-                calcular("sumar");
-            }
-        }
-        private void radioButton_restar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_restar.Checked)
-            {
-                calcular("restar");
-            }
-        }
-        private void radioButton_multiplicar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_multiplicar.Checked)
-            {
-                calcular("multiplicar");
-            }
-        }
-        private void radioButton_dividir_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (radioButton_dividir.Checked)
-            {
-                calcular("dividir");
-            }
-        }
         private void button_reset_Click(object sender, EventArgs e)
         {
             resultado.Clear();
@@ -97,6 +73,15 @@ namespace clase_basic
         private void Form1_Load(object sender, EventArgs e)
         {
             resultado.ReadOnly = true;
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            opcion = comboBox_operaciones.Text.ToString();
+        }
+
+        private void button_calcular_Click(object sender, EventArgs e)
+        {
+            calcular(opcion);
         }
     }
 }
