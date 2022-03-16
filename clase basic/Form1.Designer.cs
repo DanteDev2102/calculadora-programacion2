@@ -72,6 +72,7 @@
             this.textbox_numero1.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero1.TabIndex = 2;
             this.textbox_numero1.TextChanged += new System.EventHandler(this.textbox_numero1_TextChanged);
+            this.textbox_numero1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_numero1_KeyPress);
             // 
             // textbox_numero2
             // 
@@ -80,6 +81,7 @@
             this.textbox_numero2.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero2.TabIndex = 3;
             this.textbox_numero2.TextChanged += new System.EventHandler(this.textbox_numero2_TextChanged);
+            this.textbox_numero2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_numero2_KeyPress);
             // 
             // button_reset
             // 

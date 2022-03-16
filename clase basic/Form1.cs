@@ -6,7 +6,36 @@ namespace clase_basic
         {
             InitializeComponent();
         }
-
+        private void textbox_numero1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
+        }
+        private void textbox_numero2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            resultado.ReadOnly = true;
+        }
+        public int soloNumeros(int tecla)
+        {
+            return tecla switch
+            {
+                46 or
+                48 or
+                49 or
+                50 or
+                51 or
+                52 or
+                53 or
+                54 or
+                55 or
+                56 or
+                57 => tecla,
+                _ => 0,
+            };
+        }
         public void calcular(string metodo)
         {
             try
@@ -23,10 +52,7 @@ namespace clase_basic
                     _ => throw new NotImplementedException()
                 };
 
-                if (
-                    double.IsInfinity(operacion) ||
-                    double.IsNaN(operacion)
-                   )
+                if (double.IsInfinity(operacion))
                 {
                     throw new Exception();
                 }
@@ -81,7 +107,6 @@ namespace clase_basic
         private void textbox_numero1_TextChanged(object sender, EventArgs e) { }
         private void textbox_numero2_TextChanged(object sender, EventArgs e) { }
         private void resultado_TextChanged(object sender, EventArgs e) { }
-        private void Form1_Load(object sender, EventArgs e) { }
         private void groupBox_Enter(object sender, EventArgs e) { }
     }
 }
