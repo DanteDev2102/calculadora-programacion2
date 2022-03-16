@@ -6,18 +6,6 @@ namespace clase_basic
         {
             InitializeComponent();
         }
-        private void textbox_numero1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
-        }
-        private void textbox_numero2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            resultado.ReadOnly = true;
-        }
         public int soloNumeros(int tecla)
         {
             return tecla switch
@@ -42,7 +30,6 @@ namespace clase_basic
             {
                 double num1 = Convert.ToDouble(textbox_numero1.Text);
                 double num2 = Convert.ToDouble(textbox_numero2.Text);
-
                 double operacion = metodo switch
                 {
                     "sumar" => (num1 + num2),
@@ -51,12 +38,10 @@ namespace clase_basic
                     "dividir" => (num1 / num2),
                     _ => throw new NotImplementedException()
                 };
-
-                if (double.IsInfinity(operacion))
+                if (double.IsInfinity(operacion) || double.IsNaN(operacion))
                 {
                     throw new Exception();
                 }
-
                 errorMessage.Text = "";
                 resultado.Text = operacion.ToString();
             }
@@ -101,13 +86,18 @@ namespace clase_basic
             textbox_numero1.Clear();
             textbox_numero2.Clear();
         }
-        private void label_numero1_Click(object sender, EventArgs e) { }
-        private void label_numero2_Click(object sender, EventArgs e) { }
-        private void result_Click(object sender, EventArgs e) { }
-        private void textbox_numero1_TextChanged(object sender, EventArgs e) { }
-        private void textbox_numero2_TextChanged(object sender, EventArgs e) { }
-        private void resultado_TextChanged(object sender, EventArgs e) { }
-        private void groupBox_Enter(object sender, EventArgs e) { }
+        private void textbox_numero1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
+        }
+        private void textbox_numero2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Convert.ToChar(soloNumeros(e.KeyChar));
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            resultado.ReadOnly = true;
+        }
     }
 }
 

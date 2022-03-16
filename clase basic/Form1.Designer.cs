@@ -53,7 +53,6 @@
             this.label_numero1.Size = new System.Drawing.Size(58, 15);
             this.label_numero1.TabIndex = 0;
             this.label_numero1.Text = "numero 1";
-            this.label_numero1.Click += new System.EventHandler(this.label_numero1_Click);
             // 
             // label_numero2
             // 
@@ -63,7 +62,6 @@
             this.label_numero2.Size = new System.Drawing.Size(58, 15);
             this.label_numero2.TabIndex = 1;
             this.label_numero2.Text = "numero 2";
-            this.label_numero2.Click += new System.EventHandler(this.label_numero2_Click);
             // 
             // textbox_numero1
             // 
@@ -71,7 +69,6 @@
             this.textbox_numero1.Name = "textbox_numero1";
             this.textbox_numero1.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero1.TabIndex = 2;
-            this.textbox_numero1.TextChanged += new System.EventHandler(this.textbox_numero1_TextChanged);
             this.textbox_numero1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_numero1_KeyPress);
             // 
             // textbox_numero2
@@ -80,7 +77,6 @@
             this.textbox_numero2.Name = "textbox_numero2";
             this.textbox_numero2.Size = new System.Drawing.Size(100, 23);
             this.textbox_numero2.TabIndex = 3;
-            this.textbox_numero2.TextChanged += new System.EventHandler(this.textbox_numero2_TextChanged);
             this.textbox_numero2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_numero2_KeyPress);
             // 
             // button_reset
@@ -100,7 +96,6 @@
             this.resultado.Name = "resultado";
             this.resultado.Size = new System.Drawing.Size(38, 23);
             this.resultado.TabIndex = 6;
-            this.resultado.TextChanged += new System.EventHandler(this.resultado_TextChanged);
             // 
             // result
             // 
@@ -110,7 +105,6 @@
             this.result.Size = new System.Drawing.Size(56, 15);
             this.result.TabIndex = 7;
             this.result.Text = "resultado";
-            this.result.Click += new System.EventHandler(this.result_Click);
             // 
             // titulo
             // 
@@ -145,7 +139,6 @@
             this.groupBox.TabIndex = 13;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "inputs";
-            this.groupBox.Enter += new System.EventHandler(this.groupBox_Enter);
             // 
             // radioBtn_sumar
             // 
