@@ -13,32 +13,30 @@ namespace clase_basic
             {
                 double num1 = Convert.ToDouble(textbox_numero1.Text);
                 double num2 = Convert.ToDouble(textbox_numero2.Text);
-                resultado.Text = num1.ToString();
-                string operacion = metodo switch
+
+                double operacion = metodo switch
                 {
-                    "sumar" => (num1 + num2).ToString(),
-                    "restar" => (num1 - num2).ToString(),
-                    "multiplicar" => (num1 * num2).ToString(),
-                    "dividir" => (num1 / num2).ToString(),
+                    "sumar" => (num1 + num2),
+                    "restar" => (num1 - num2),
+                    "multiplicar" => (num1 * num2),
+                    "dividir" => (num1 / num2),
                     _ => throw new NotImplementedException()
                 };
 
                 if (
-                    double.IsNaN(Convert.ToDouble(resultado.Text)) ||
-                    double.IsInfinity(Convert.ToDouble(resultado.Text))
+                    double.IsInfinity(operacion) ||
+                    double.IsNaN(operacion)
                    )
                 {
-                    errorMessage.Text = "ERROR: no es posible realizar la operacion";
+                    throw new Exception();
                 }
-                else
-                {
-                    errorMessage.Text = "";
-                    resultado.Text = operacion;
-                }
+
+                errorMessage.Text = "";
+                resultado.Text = operacion.ToString();
             }
             catch (Exception)
             {
-                errorMessage.Text = "ERROR: no es posible realizar la operacion";
+                errorMessage.Text = "ERROR: operación no valida";
             }
 
         }
